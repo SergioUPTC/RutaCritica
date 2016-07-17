@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Ruta Corta - Investigación de Operaciones</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendor/normalize.css" rel="stylesheet">
+    <link href="vendor/flexboxgrid.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="vendor/jquery.min.js"></script>
+  </head>
+  <body>
+    <section class="content">
+      <h1 class="title__section">RUTA CRITICA</h1>
+      <p class="description">Agregue las actividades que desee, asocielas y el programa te mostrara la ruta critica (ruta mas larga) entre la actividad inicial y la actividad final.</p>
+      <section class="section">
+        <form class="activity__add form">
+          <div class="row">
+            <div class="col-xs-12">
+              <h2 class="title__area">Agregar actividad</h2>
+            </div>
+            <div class="form__section col-sm-8">
+              <label class="form__label">Nombre Actividad</label>
+              <input id="activity__name" type="text" placeholder="Nombre Actividad" required class="form__input">
+            </div>
+            <div class="form__section col-sm-4">
+              <label class="form__label">Tiempo Desarrollo</label>
+              <input id="activity__duration" type="number" placeholder="Dias" required class="form__input">
+            </div>
+            <div class="form__section col-xs-12">
+              <div class="row end-xs">
+                <div class="col-xs-6">
+                  <button type="submit" class="btn">Agregar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+      <section class="section">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2 class="title__area">Lista de actividades</h2>
+          </div>
+          <div class="col-xs-12">
+            <div class="activity__list">
+              <p class="error">No hay actividades registradas</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2 class="title__area">Inicio(s)</h2>
+          </div>
+          <div class="col-xs-12">
+            <div id="starts">
+              <p class="error">No se encontraron actividades donde iniciar</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2 class="title__area">Final(es)</h2>
+          </div>
+          <div class="col-xs-12">
+            <div id="ends">
+              <p class="error">No se encontraron actividades donde finalizar</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2 class="title__area">Ruta Critica</h2>
+          </div>
+          <div class="col-xs-12">
+            <div class="row">
+              <div class="col-xs-9">
+                <p id="result__route"></p>
+              </div>
+              <div class="col-xs-3"><a id="calcule__route" href="#" class="btn btn__full">Calcular</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <div id="add_association" class="popup">
+      <div class="content">
+        <form id="form__association" class="form">
+          <div class="row">
+            <div class="col-xs-12">
+              <h3 class="title__area">Asociar actividades</h3>
+            </div>
+            <div class="col-xs-12">
+              <h4 class="title__desc">Asociar <span>Desarrollo</span> con:</h4>
+            </div>
+          </div>
+          <div class="association__activities row"></div>
+          <div class="form__section">
+            <div class="row end-xs">
+              <div class="col-xs-6">
+                <button type="submit" class="btn">Agregar</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="popup__close"></div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
